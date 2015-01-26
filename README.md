@@ -1,6 +1,7 @@
 This is a new online judge system based on hustoj.
 http://xcacm.hfut.edu.cn
 
+
 New features:
 	Update to bootstrap3.3;
 	New UI like BNUOJ(http://www.bnuoj.com);
