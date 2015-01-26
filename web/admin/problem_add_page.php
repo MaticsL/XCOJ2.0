@@ -24,6 +24,7 @@ include_once("../fckeditor/fckeditor.php") ;
 <input type=hidden name=problem_id value="New Problem">
 <p align=left>Problem Id:&nbsp;&nbsp;New Problem</p>
 <p align=left>Title:<input class="input input-xxlarge" type=text name=title size=71></p>
+<p align=left>Tags:<input class="input input-xxlarge" type=text name=tags size=71></p>
 <p align=left>Time Limit:<input type=text name=time_limit size=20 value=1>S</p>
 <p align=left>Memory Limit:<input type=text name=memory_limit size=20 value=128>MByte</p>
 <p align=left>Description:<br><!--<textarea rows=13 name=description cols=80></textarea>-->

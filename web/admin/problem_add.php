@@ -13,6 +13,7 @@ if (!(isset($_SESSION['administrator'])||isset($_SESSION['problem_editor']))){
 
 
 $title = $_POST ['title'];
+$tags = $_POST ['tags'];
 $time_limit = $_POST ['time_limit'];
 $memory_limit = $_POST ['memory_limit'];
 $description = $_POST ['description'];
@@ -27,6 +28,7 @@ $source = $_POST ['source'];
 $spj = $_POST ['spj'];
 if (get_magic_quotes_gpc ()) {
 	$title = stripslashes ( $title);
+	$tags = stripslashes ( $tags);
 	$time_limit = stripslashes ( $time_limit);
 	$memory_limit = stripslashes ( $memory_limit);
 	$description = stripslashes ( $description);
@@ -42,7 +44,7 @@ if (get_magic_quotes_gpc ()) {
 	$source = stripslashes ( $source );
 }
 //echo "->".$OJ_DATA."<-"; 
-$pid=addproblem ( $title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj, $OJ_DATA );
+$pid=addproblem ( $title, $tags, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj, $OJ_DATA );
 $basedir = "$OJ_DATA/$pid";
 mkdir ( $basedir );
 if(strlen($sample_output)&&!strlen($sample_input)) $sample_input="0";

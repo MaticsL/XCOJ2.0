@@ -5,7 +5,7 @@
     require_once('./include/db_info.inc.php');
         require_once('./include/setlang.php');
         $view_title= $MSG_RANKLIST;
-
+	$url=basename($_SERVER['REQUEST_URI']);
         $scope="";
         if(isset($_GET['scope']))
                 $scope=$_GET['scope'];

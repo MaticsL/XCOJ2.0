@@ -1,0 +1,30 @@
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							地址
+						</th>
+						<th>
+							接口
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="warning">
+						<td>
+							http://xcacm.hfut.edu.cn/oj/api/problemset-api.php?page=*
+						</td>
+						<td>
+							返回第*页题目列表的json
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							http://xcacm.hfut.edu.cn/oj/api/problem-api.php?id=*
+						</td>
+						<td>
+							返回第*题内容的json
+						</td>
+					</tr>
+				</tbody>
+			</table>

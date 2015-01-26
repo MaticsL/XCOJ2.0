@@ -15,27 +15,17 @@ $row=mysql_fetch_object($result);
 $cnt=intval($row->upid)-$first;
 $cnt=$cnt/$page_cnt;
 
-  //remember page
-  $page="1";
-if (isset($_GET['page'])){
-    $page=intval($_GET['page']);
-    if(isset($_SESSION['user_id'])){
-         $sql="update users set volume=$page where user_id='".$_SESSION['user_id']."'";
-         mysql_query($sql);
-    }
-}else{
-    if(isset($_SESSION['user_id'])){
+//remember page
+$page="1";
+if(isset($_SESSION['user_id'])){
             $sql="select volume from users where user_id='".$_SESSION['user_id']."'";
             $result=@mysql_query($sql);
             $row=mysql_fetch_array($result);
             $page=intval($row[0]);
-    }
-    if(!is_numeric($page)||$page<0)
-        $page='1';
 }
-  //end of remember page
-
-
+if(!is_numeric($page)||$page<0)
+        $page='1';
+//end of remember page
 
 $pstart=$first+$page_cnt*intval($page)-$page_cnt;
 $pend=$pstart+$page_cnt;
@@ -65,13 +55,8 @@ while ($row=mysql_fetch_array($result))
 	$acc_arr[$row[0]]=true;
 }
 
-if(isset($_GET['search'])&&trim($_GET['search'])!=""){
-	$search=mysql_real_escape_string($_GET['search']);
-    $filter_sql=" ( title like '%$search%' or source like '%$search%')";
-    
-}else{
-     $filter_sql="  `problem_id`>='".strval($pstart)."' AND `problem_id`<'".strval($pend)."' ";
-}
+
+$filter_sql="  `problem_id`>='".strval($pstart)."' AND `problem_id`<'".strval($pend)."' ";
 
 if (isset($_SESSION['administrator'])){
 	
@@ -106,15 +91,15 @@ while ($row=mysql_fetch_object($result)){
 	$view_problemset[$i]=Array();
 	if (isset($sub_arr[$row->problem_id])){
 		if (isset($acc_arr[$row->problem_id])) 
-			$view_problemset[$i][0]="<div class='btn btn-success'>Y</div>";
+			$view_problemset[$i][0]="<div class='btn btn-success btn-sm'>Yes</div>";
 		else 
-			$view_problemset[$i][0]= "<div class='btn btn-danger'>N</div>";
+			$view_problemset[$i][0]= "<div class='btn btn-danger btn-sm'>No</div>";
 	}else{
 		$view_problemset[$i][0]= "<div class=none> </div>";
 	}
 	$view_problemset[$i][1]="<div class='center'>".$row->problem_id."</div>";;
 	$view_problemset[$i][2]="<div class='left'><a href='problem.php?id=".$row->problem_id."'>".$row->title."</a></div>";;
-	$view_problemset[$i][3]="<div class='center'><nobr>".mb_substr($row->source,0,16,'utf8')."</nobr></div >";
+	$view_problemset[$i][3]="<div><nobr>".mb_substr($row->source,0,16,'utf8')."</nobr></div>";
 	$view_problemset[$i][4]="<div class='center'><a href='status.php?problem_id=".$row->problem_id."&jresult=4'>".$row->accepted."</a></div>";
 	$view_problemset[$i][5]="<div class='center'><a href='status.php?problem_id=".$row->problem_id."'>".$row->submit."</a></div>";
 	

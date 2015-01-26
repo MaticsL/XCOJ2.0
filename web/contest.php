@@ -101,8 +101,6 @@
 				$view_start_time=$row->start_time;
 				$view_end_time=$row->end_time;
 				
-				
-				
 				if (!isset($_SESSION['administrator']) && $now<$start_time){
 					$view_errors=  "<h2>$MSG_PRIVATE_WARNING</h2>";
 					require("template/".$OJ_TEMPLATE."/error.php");
@@ -134,9 +132,8 @@
 				$view_problemset[$cnt][0]="";
 				if (isset($_SESSION['user_id'])) 
 					$view_problemset[$cnt][0]=check_ac($cid,$cnt);
-				$view_problemset[$cnt][1]= "$row->pid Problem &nbsp;".(chr($cnt+ord('A')));
+				$view_problemset[$cnt][1]= "Problem &nbsp;".(chr($cnt+ord('A')));
 				$view_problemset[$cnt][2]= "<a href='problem.php?cid=$cid&pid=$cnt'>$row->title</a>";
-				$view_problemset[$cnt][3]=$row->source ;
 				$view_problemset[$cnt][4]=$row->accepted ;
 				$view_problemset[$cnt][5]=$row->submit ;
 				$cnt++;

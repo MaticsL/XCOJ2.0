@@ -32,7 +32,7 @@ if (!is_valid_user_name($user_id)){
 }
 $nick=trim($_POST['nick']);
 $len=strlen($nick);
-if ($len>100){
+if ($len>60){
 	$err_str=$err_str."Nick Name Too Long!\\n";
 	$err_cnt++;
 }else if ($len==0) $nick=$user_id;

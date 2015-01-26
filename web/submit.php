@@ -1,15 +1,13 @@
-<?php session_start();
+<?php 
+session_start();
 if (!isset($_SESSION['user_id'])){
-	require_once("oj-header.php");
-	echo "<a href='loginpage.php'>Please Login First!</a>";
-	require_once("oj-footer.php");
+	echo "<script>window.location.href='loginpage.php'</script>";
 	exit(0);
 }
 require_once("include/db_info.inc.php");
 require_once("include/const.inc.php");
   $now=strftime("%Y-%m-%d %H:%M",time());
 $user_id=$_SESSION['user_id'];
-
 if (isset($_POST['cid'])){
 	$pid=intval($_POST['pid']);
 	$cid=intval($_POST['cid']);

@@ -35,6 +35,7 @@ $row=mysql_fetch_object($result);
 <p>Problem Id: <?php echo $row->problem_id?></p>
 <input type=hidden name=problem_id value='<?php echo $row->problem_id?>'>
 <p>Title:<input type=text name=title size=71 value='<?php echo htmlspecialchars($row->title)?>'></p>
+<p>Tags:<input type=text name=tags size=71 value='<?php echo htmlspecialchars($row->tags)?>'></p>
 <p>Time Limit:<input type=text name=time_limit size=20 value='<?php echo $row->time_limit?>'>S</p>
 <p>Memory Limit:<input type=text name=memory_limit size=20 value='<?php echo $row->memory_limit?>'>MByte</p>
 
@@ -111,6 +112,7 @@ require_once("../include/check_post_key.php");
 $id=intval($_POST['problem_id']);
 if(!(isset($_SESSION["p$id"])||isset($_SESSION['administrator']))) exit();	
 $title=$_POST['title'];
+$tags=$_POST['tags'];
 $time_limit=$_POST['time_limit'];
 $memory_limit=$_POST['memory_limit'];
 $description=$_POST['description'];
@@ -123,6 +125,7 @@ $source=$_POST['source'];
 $spj=$_POST['spj'];
 if (get_magic_quotes_gpc ()) {
 	$title = stripslashes ( $title);
+	$tags = stripslashes ( $tags);
 	$time_limit = stripslashes ( $time_limit);
 	$memory_limit = stripslashes ( $memory_limit);
 	$description = stripslashes ( $description);
@@ -151,6 +154,7 @@ echo "Sample data file in $basedir Updated!<br>";
 		fclose($fp);
 	}
 	$title=mysql_real_escape_string($title);
+	$tags=mysql_real_escape_string($tags);
 	$time_limit=mysql_real_escape_string($time_limit);
 	$memory_limit=mysql_real_escape_string($memory_limit);
 	$description=mysql_real_escape_string($description);
@@ -164,7 +168,7 @@ echo "Sample data file in $basedir Updated!<br>";
 	$source=mysql_real_escape_string($source);
 //	$spj=($spj);
 	
-$sql="UPDATE `problem` set `title`='$title',`time_limit`='$time_limit',`memory_limit`='$memory_limit',
+$sql="UPDATE `problem` set `title`='$title',`tags`='$tags',`time_limit`='$time_limit',`memory_limit`='$memory_limit',
 	`description`='$description',`input`='$input',`output`='$output',`sample_input`='$sample_input',`sample_output`='$sample_output',`hint`='$hint',`source`='$source',`spj`=$spj,`in_date`=NOW()
 	WHERE `problem_id`=$id";
 

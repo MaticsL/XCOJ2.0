@@ -3,14 +3,12 @@
 	if(isset($OJ_LANG)){
 		require_once("../lang/$OJ_LANG.php");
 	}
-	
 
 ?>
 <html>
 <head>
 <title><?php echo $MSG_ADMIN?></title>
 </head>
-
 <body>
 <hr>
 <h4>

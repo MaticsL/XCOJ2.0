@@ -30,10 +30,9 @@
 		echo "history.go(-2);\n";
 		echo "</script>";
 	}else{
-		
 		echo "<script language='javascript'>\n";
 		echo "alert('UserName or Password Wrong!');\n";
-		echo "history.go(-1);\n";
+		echo "window.location.href='loginpage.php';";
 		echo "</script>";
 	}
 ?>

@@ -1,12 +1,23 @@
-<?php
+<?php	
+	//index.php
+	$MSG_NEWS="最新消息!";
+	$MSG_ABOUT_US="关于我们";
+	$MSG_TEAM_HONORS="获奖情况";
+	$MSG_DOWNLOAD="下载";
+
 	$MSG_FAQ="常见问答";
 	$MSG_BBS="讨论版";
 	$MSG_HOME="主页";
 	$MSG_PROBLEMS="问题";
-	$MSG_STATUS="状态";
-	$MSG_RANKLIST="排名";
+		$MSG_VIEWALL="查看全部";
+		$MSG_VJUDGE_PROBLEMS="虚拟评测机";
+		$MSG_PROBLEM_CATEGORY="题库目录";
+	$MSG_STATUS="评测状态";
+	$MSG_RANKLIST="排行榜";
 	$MSG_CONTEST="竞赛&作业";
-  $MSG_RECENT_CONTEST="名校联赛";
+		$MSG_LOCAL_CONTEST="本地";
+	        $MSG_RECENT_CONTEST="名校联赛";
+		$MSG_DIY_CONTEST="自定义比赛";
 	$MSG_LOGOUT="注销";
 	$MSG_LOGIN="登录";
 	$MSG_REGISTER="注册";
@@ -14,6 +25,7 @@
 	$MSG_STANDING="名次";
 	$MSG_STATISTICS="统计";
 	$MSG_USERINFO="修改帐号";
+	$MSG_ME="个人信息";
 	$MSG_MAIL="短消息";
 	
 	$MSG_Pending="等待";
@@ -99,6 +111,8 @@ $MSG_Compile_OK="人品问题-愚人节快乐";
 		//problem.php
 	$MSG_NO_SUCH_PROBLEM="题目不可用!";
 	$MSG_Description="题目描述"  ;
+	$MSG_TAGS="标签" ;
+	$MSG_STATISTICS="统计" ;
 	$MSG_Input="输入"  ;
 	$MSG_Output= "输出" ;
 	$MSG_Sample_Input= "样例输入" ;

@@ -1,0 +1,76 @@
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							名称
+						</th>
+						<th>
+							奖项
+						</th>
+						<th>
+							队员
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							2014 ACMICPC亚洲区域赛上海站
+						</td>
+						<td>
+							铜奖
+						</td>
+						<td>
+							高翔 李励成 项佶恺
+						</td>
+					</tr>
+					<tr>
+						<td>
+							2
+						</td>
+						<td>
+							2014 ACMICPC湖南赛区邀请赛
+						</td>
+						<td>
+							银奖
+						</td>
+						<td>
+							叶泽坤 晋欢欢 王瀚
+						</td>
+					</tr>
+					<tr>
+						<td>
+							3
+						</td>
+						<td>
+							<span>2014 安徽省“京胜杯”程序设计大赛</span>
+						</td>
+						<td>
+							二等奖
+						</td>
+						<td>
+							高翔 王瀚 李励成
+						</td>
+					</tr>
+					<tr>
+						<td>
+							4
+						</td>
+						<td>
+							2014 安徽省“京胜杯”程序设计大赛
+						</td>
+						<td>
+							二等奖
+						</td>
+						<td>
+							潘汀 王远立 申昊骅
+						</td>
+					</tr>
+				</tbody>
+			</table>

@@ -1,13 +1,23 @@
 <?php
+	//index.php
+	$MSG_NEWS="News!";
+	$MSG_ABOUT_US="About Us";
+	$MSG_TEAM_HONORS="Team Honors";
+	$MSG_DOWNLOAD="Download";
 	//oj-header.php
 	$MSG_FAQ="F.A.Qs";
 	$MSG_BBS="Web Board";
 	$MSG_HOME="Home";
-	$MSG_PROBLEMS="ProblemSet";
+	$MSG_PROBLEMS="Problem";
+		$MSG_VIEWALL="View All";
+		$MSG_VJUDGE_PROBLEMS="Vjudge Problems";
+		$MSG_PROBLEM_CATEGORY="Problem Category";
 	$MSG_STATUS="Status";
 	$MSG_RANKLIST="Ranklist";
 	$MSG_CONTEST="Contest";
-  $MSG_RECENT_CONTEST="Recent";
+		$MSG_LOCAL_CONTEST="Local Contest";
+	        $MSG_RECENT_CONTEST="Remote Contest";
+		$MSG_DIY_CONTEST="DIY Contest";
 	$MSG_LOGOUT="Logout";
 	$MSG_LOGIN="Login";
 	$MSG_REGISTER="Register";
@@ -15,6 +25,7 @@
 	$MSG_STANDING="Standing";
 	$MSG_STATISTICS="Statistics";
 	$MSG_USERINFO="ModifyUser";
+	$MSG_ME="Show My Info";
 	$MSG_MAIL="Mail";
 	//status.php
 	$MSG_Pending="Pending";
@@ -28,10 +39,10 @@
 	$MSG_Memory_Limit_Exceed="Memory Limit Exceed";
 	$MSG_Output_Limit_Exceed="Output Limit Exceed";
 	$MSG_Runtime_Error="Runtime Error";
-$MSG_TEST_RUN="Test Running Done";
+        $MSG_TEST_RUN="Test Running Done";
 	$MSG_Compile_Error="Compile Error";
    
-  $MSG_Runtime_Click="Runtime Error(Click)";
+  	$MSG_Runtime_Click="Runtime Error(Click)";
 	$MSG_Compile_Click="Compile Error(Click)";
 	$MSG_Click_Detail="Click To View Detail";
 	$MSG_Compile_OK="Compile OK";
@@ -78,7 +89,7 @@ $MSG_TEST_RUN="Test Running Done";
 	//registerpage.php
 	$MSG_USER_ID="User ID";
 	$MSG_PASSWORD="Password";
-	$MSG_REPEAT_PASSWORD="Repeat Password";
+	$MSG_REPEAT_PASSWORD="Repeat";
 	$MSG_SCHOOL="School";
 	$MSG_EMAIL="Email";
 	$MSG_REG_INFO="Register Information";
@@ -86,6 +97,8 @@ $MSG_TEST_RUN="Test Running Done";
 
 	//problem.php
 	$MSG_NO_SUCH_PROBLEM="Problem is not Available!";
+	$MSG_TAGS="Tags" ;
+	$MSG_STATISTICS="Statistics" ;
 	$MSG_Description="Description"  ;
 	$MSG_Input="Input"  ;
 	$MSG_Output= "Output" ;

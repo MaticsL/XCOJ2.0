@@ -1,6 +1,9 @@
 <?php
-	require_once("oj-header.php");
-	echo "<title>HUST Online Judge WebBoard</title>";
+	if (isset($_GET["cid"]) && $_GET["cid"]!=null) 
+		require_once("contest-header.php");
+	else 
+		require_once("oj-header.php");
+	echo "<title>Thread</title>";
 	$sql="SELECT `title`, `cid`, `pid`, `status`, `top_level` FROM `topic` WHERE `tid` = '".mysql_escape_string($_REQUEST['tid'])."' AND `status` <= 1";
 	$result=mysql_query($sql) or die("Error! ".mysql_error());
 	$rows_cnt = mysql_num_rows($result) or die("Error! ".mysql_error());
@@ -8,9 +11,6 @@
 	$isadmin = isset($_SESSION['administrator']);
 ?>
 
-<center>
-<div style="width:90%; margin:0 auto; text-align:left;"> 
-<div style="text-align:left;font-size:80%;float:left;">[ <a href="newpost.php">New Thread</a> ]</div>
 <?php if ($isadmin){
 	?><div style="font-size:80%; float:right"> Change sticky level to<?php $adminurl = "threadadmin.php?target=thread&tid={$_REQUEST['tid']}&action=";
 	if ($row->top_level == 0) echo "[ <a href=\"{$adminurl}sticky&level=3\">Level Top</a> ] [ <a href=\"{$adminurl}sticky&level=2\">Level Mid</a> ] [ <a href=\"{$adminurl}sticky&level=1\">Level Low</a> ]"; else echo "[ <a href=\"{$adminurl}sticky&level=0\">Standard</a> ]";
@@ -18,29 +18,27 @@
 	?> | <?php echo (" [ <a href=\"{$adminurl}delete\">Delete</a> ]");
 	?></div><?php }
 ?>
-<table style="width:100%; clear:both">
-<tr align=center class='toprow'>
-	<td style="text-align:left">
-	<a href="discuss.php<?php if ($row->pid!=0 && $row->cid!=null) echo "?pid=".$row->pid."&cid=".$row->cid;
-	else if ($row->pid!=0) echo"?pid=".$row->pid; else if ($row->cid!=null) echo"?cid=".$row->cid;?>">
-	<?php if ($row->pid!=0) echo "Problem ".$row->pid; else echo "MainBoard";?></a> >> <?php echo nl2br(htmlspecialchars($row->title));?></td>
-</tr>
 
+    <ol class="breadcrumb">
+    <?php if($row->cid==null) echo "<li><a href='discuss.php'>MainBoard</a></li>"?>
+	<li><a href="discuss.php<?php if ($row->pid!=0 && $row->cid!=null) echo "?pid=".$row->pid."&cid=".$row->cid;
+	else if ($row->pid!=0) echo"?pid=".$row->pid; else if ($row->cid!=null) echo"?cid=".$row->cid;?>">
+	<?php if ($row->pid!=0) echo "Problem ".$row->pid; else if ($row->cid!=null) echo "Contest ".$row->cid; else echo "Other";?></a></li><li class="active"><?php echo nl2br(htmlspecialchars($row->title));?></li></ol>
+<center>
+<table width="100%">
 <?php
 	$sql="SELECT `rid`, `author_id`, `time`, `content`, `status` FROM `reply` WHERE `topic_id` = '".mysql_escape_string($_REQUEST['tid'])."' AND `status` <=1 ORDER BY `rid` LIMIT 30";
 	$result=mysql_query($sql) or die("Error! ".mysql_error());
 	$rows_cnt = mysql_num_rows($result);
 	$cnt=0;
-
 	for ($i=0;$i<$rows_cnt;$i++){
 		mysql_data_seek($result,$i);
 		$row=mysql_fetch_object($result);
 		$url = "threadadmin.php?target=reply&rid={$row->rid}&tid={$_REQUEST['tid']}&action=";
 		$isuser = strtolower($row->author_id)==strtolower($_SESSION['user_id']);
 ?>
-<tr align=center class='<?php echo ($cnt=!$cnt)?'even':'odd';?>row'>
+<tr align=center>
 	<td>
-		
 		<a name=post<?php echo $row->rid;?>></a>
      <div style="display:inline;text-align:left; float:left; margin:0 10px"><a href="../userinfo.php?user=<?php echo $row->author_id?>"><?php echo $row->author_id; ?> </a> @ <?php echo $row->time; ?></div>
 		<div class="mon" style="display:inline;text-align:right; float:right">
@@ -85,8 +83,7 @@
 </form>
 <?php }
 ?>
-
 </center>
+<center><?php require_once("../oj-footer.php")?></center>
 </div>
 
-<?php require_once("../oj-footer.php")?>

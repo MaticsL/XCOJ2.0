@@ -17,13 +17,13 @@ function Pie(_div)
 	
 	this.start_x = 0;
 	this.start_y = 0;
-	this.width= 100;
-	this.height= 100;
+	this.width= 140;
+	this.height= 140;
 	this.desc_distance = 80;
 	this.desc_width = 10;
 	this.desc_height= 10;
 	this.IsShowPercentage =true;
-	this.IsShowShadow =true;
+	this.IsShowShadow =false;
 	this.IsDescRight=true;
 	this.nextRow = 2;
 	

@@ -6,8 +6,8 @@ require_once('./include/cache_start.php');
 	$view_title= "LOGIN";
 
 	if (isset($_SESSION['user_id'])){
-	echo "<a href=logout.php>Please logout First!</a>";
-	exit(1);
+	echo "<script>history.go(-1)</script>";
+	exit(0);
 }
 
 /////////////////////////Template

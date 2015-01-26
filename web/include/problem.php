@@ -1,7 +1,8 @@
 <?php
 
-function addproblem($title, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj,$OJ_DATA) {
+function addproblem($title, $tags, $time_limit, $memory_limit, $description, $input, $output, $sample_input, $sample_output, $hint, $source, $spj,$OJ_DATA) {
 	$title=mysql_real_escape_string($title);
+	$tags=mysql_real_escape_string($tags);
 	$time_limit=mysql_real_escape_string($time_limit);
 	$memory_limit=mysql_real_escape_string($memory_limit);
 	$description=mysql_real_escape_string($description);
@@ -15,9 +16,9 @@ function addproblem($title, $time_limit, $memory_limit, $description, $input, $o
 	$source=mysql_real_escape_string($source);
 //	$spj=($spj);
 	
-	$sql = "INSERT into `problem` (`title`,`time_limit`,`memory_limit`,
+	$sql = "INSERT into `problem` (`title`,`tags`,`time_limit`,`memory_limit`,
 	`description`,`input`,`output`,`sample_input`,`sample_output`,`hint`,`source`,`spj`,`in_date`,`defunct`)
-	VALUES('$title','$time_limit','$memory_limit','$description','$input','$output',
+	VALUES('$title','$tags','$time_limit','$memory_limit','$description','$input','$output',
 			'$sample_input','$sample_output','$hint','$source','$spj',NOW(),'Y')";
 	//echo $sql;
 	@mysql_query ( $sql ) or die ( mysql_error () );

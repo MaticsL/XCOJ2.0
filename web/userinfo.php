@@ -68,7 +68,7 @@ $sql="SELECT result,count(1) FROM solution WHERE `user_id`='$user_mysql'  AND re
 	}
 	mysql_free_result($result);
 
-$sql=	"SELECT UNIX_TIMESTAMP(date(in_date))*1000 md,count(1) c FROM `solution` where  `user_id`='$user_mysql'   group by md order by md desc ";
+$sql=	"SELECT UNIX_TIMESTAMP(date(in_date)) md,count(1) c FROM `solution` where  `user_id`='$user_mysql'   group by md order by md desc ";
 	$result=mysql_query($sql);//mysql_escape_string($sql));
 	$chart_data_all= array();
 //echo $sql;
@@ -77,7 +77,7 @@ $sql=	"SELECT UNIX_TIMESTAMP(date(in_date))*1000 md,count(1) c FROM `solution` w
 		$chart_data_all[$row['md']]=$row['c'];
     }
     
-$sql=	"SELECT UNIX_TIMESTAMP(date(in_date))*1000 md,count(1) c FROM `solution` where  `user_id`='$user_mysql' and result=4 group by md order by md desc ";
+$sql=	"SELECT UNIX_TIMESTAMP(date(in_date)) md,count(1) c FROM `solution` where  `user_id`='$user_mysql' and result=4 group by md order by md desc ";
 	$result=mysql_query($sql);//mysql_escape_string($sql));
 	$chart_data_ac= array();
 //echo $sql;

@@ -2,7 +2,8 @@
 $cache_time=30;
 $OJ_CACHE_SHARE=false;
         require_once('./include/cache_start.php');
-    require_once('./include/db_info.inc.php');
+    	require_once('./include/db_info.inc.php');
+    	require_once('./include/const.inc.php');
         require_once('./include/setlang.php');
         $now=strftime("%Y-%m-%d %H:%M",time());
 if (isset($_GET['cid'])) $ucid="&cid=".intval($_GET['cid']);
@@ -95,7 +96,7 @@ if (mysql_num_rows($result)!=1){
                                  
                                
                 }else{
-                        $view_title= "<title>$MSG_NO_SUCH_PROBLEM!</title>";
+                        $view_title= "$MSG_NO_SUCH_PROBLEM!";
                         $view_errors.= "<h2>$MSG_NO_SUCH_PROBLEM!</h2>";
                 }
    }else{

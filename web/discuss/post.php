@@ -59,7 +59,7 @@
                         mysql_query($sql) or die (mysql_error());
                         if(mysql_affected_rows()>0)
                         {
-                                header('Location: thread.php?tid='.$tid);
+                                if($_REQUEST['action']=='new') echo "<script>history.go(-2)</script>";else echo "<script>history.go(-1);history.go(0)</script>"; 
                                 exit(0);
                         }
                         else

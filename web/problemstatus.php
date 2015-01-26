@@ -4,7 +4,7 @@
 	require_once('./include/cache_start.php');
     require_once('./include/db_info.inc.php');
 	require_once('./include/setlang.php');
-	$view_title= "Welcome To Online Judge";
+	$view_title= "Status";
 require_once("./include/const.inc.php");
 
 $id=strval(intval($_GET['id']));
@@ -62,12 +62,12 @@ mysql_free_result($result);
 ?>
 
 
-<?php $pagemin=0; $pagemax=intval(($acuser-1)/20);
+<?php $pagemin=0; $pagemax=intval(($acuser-1)/10);
 
 if ($page<$pagemin) $page=$pagemin;
 if ($page>$pagemax) $page=$pagemax;
-$start=$page*20;
-$sz=20;
+$start=$page*10;
+$sz=10;
 if ($start+$sz>$acuser) $sz=$acuser-$start;
 
 
@@ -176,4 +176,5 @@ require("template/".$OJ_TEMPLATE."/problemstatus.php");
 if(file_exists('./include/cache_end.php'))
 	require_once('./include/cache_end.php');
 ?>
+
 

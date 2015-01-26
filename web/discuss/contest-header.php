@@ -7,6 +7,7 @@
 ?>
 <html>
 <head>
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel=stylesheet href='../include/hoj.css' type='text/css'>
 </head>

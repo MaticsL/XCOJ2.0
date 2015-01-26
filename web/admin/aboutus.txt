@@ -1,0 +1,53 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          1.什么是ACM-ICPC？
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+	ACM-ICPC 是由 ACM （美国计算机协会）主办的面向大学生的国际程序设计竞赛（International Collegiate Programming Contest），至今已举办了 36 届，被称为大学生的计算机奥林匹克竞赛。比赛由 3 名选手组成一队，在 5 小时内共用 1 台计算机编程比赛，特别强调团队配合和动手解决实际问题的能力，因此不仅被广泛认为是教学成果的体现，而且深受广大大学生的喜爱。目前，全国各知名高校都越来越重视本项赛事，大学生的参赛热情空前高涨。中国大陆地区的竞赛竞争最为激烈，水平居各大洲之首。
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          2.如何准备ACM-ICPC？
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+	<h3>关于训练：</h3>
+	首先，请确认自己有坚定的意志去学习算法知识和参加ACMICPC系列竞赛。竞赛要求队员有较高的C++语言功底和较强的自学能力。
+	推荐书籍：《算法导论》《算法竞赛入门经典》系列。
+	看书+做题是准备ACM-ICPC的基本方式，相关做题网站链接在右边已经给出。在HDOJ的题库第七页有很多适合新手的基础题目，之后可以做一些带专题分类的OJ，例如VIJOS和BNUOJ。在拥有一定水平之后，可以参加一些网络算法竞赛比如Bestcoder，比赛对于水平的提高帮助很大。
+	
+	<h3>关于比赛：</h3>
+	每年我们都会准备若干场练习赛，名次较高者均有机会加入ACM-ICPC集训队进行更为严格的集训。
+	每学年四到五月为校区赛和省赛阶段，校区赛没有门槛，我们欢迎任何同学前来参赛。我们会在校区赛成绩优秀者中选出大约十五人参加省赛。
+	每年的九月到十二月是区域赛阶段，其中九月为区域赛网络预选赛阶段，原则上要求每个成员参加，之后的区域赛现场赛名额将按照成员在网络赛上的表现进行分配。
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          3.怎样联系我们？
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+	欢迎加入qq群：6266043。
+	有任何问题均可在群内或在OJ的讨论版上提问。
+      </div>
+    </div>
+  </div>
+</div>
