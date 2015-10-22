@@ -26,7 +26,7 @@
 			<?php if ($now>$start_time&&$now<$end_time) {?>
 			<div class="progress">
   				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo (($now-$start_time)*100/($end_time-$start_time))."%"?>">
-    					<span class="sr-only">45% Complete</span>
+    					<span class="sr-only"></span>
   				</div>
 			</div>
 			<?php } ?>
@@ -48,7 +48,7 @@
 					echo "&nbsp;&nbsp;<span class=red>Private</font>"; 
 			?><br />
 			<div class="btn-group" role="group">
-            	<?php if (isset($_SESSION['user_id'])) echo "<a class='btn btn-lg btn-warning' href='status.php?cid=".$view_cid."&user_id=".$_SESSION['user_id']."'>My Subissions</a>"; else echo "<a class='btn btn-lg btn-warning' href='loginpage.php'>$MSG_LOGIN</a>";?>
+            	<?php if (isset($_SESSION['user_id'])) echo "<a class='btn btn-lg btn-warning' href='status.php?cid=".$view_cid."&user_id=".$_SESSION['user_id']."'>我的提交记录</a>"; else echo "<a class='btn btn-lg btn-warning' href='loginpage.php'>$MSG_LOGIN</a>";?>
 				<a class="btn btn-lg btn-default" href='status.php?cid=<?php echo $view_cid?>'><?php echo $MSG_STATUS?></a>
 				<a class="btn btn-lg btn-default" href='contestrank.php?cid=<?php echo $view_cid?>'><?php echo $MSG_STANDING?></a>
 				<a class="btn btn-lg btn-default" href='conteststatistics.php?cid=<?php echo $view_cid?>'><?php echo $MSG_STATISTICS?></a>

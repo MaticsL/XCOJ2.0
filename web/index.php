@@ -9,7 +9,7 @@
 	//if ($OJ_LANG == 'cn')
 	//	$view_title = "欢迎来到".$OJ_NAME;
 	//else 
-		$view_title= "Welcome To ".$OJ_NAME;
+		$view_title= $OJ_NAME;
 	
 ///////////////////////////MAIN	
 	

@@ -1,34 +1,32 @@
 <html>
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv='refresh' content='60'>
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-        <title><?php echo $view_title?></title>
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
-   	<!--[if lt IE 9]>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv='refresh' content='60'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $view_title?></title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
+<!--[if lt IE 9]>
       	<script src="bootstrap/js/html5shiv.min.js"></script>
       	<script src="bootstrap/css/respond.min.js"></script>
-    	<![endif]-->	
+    	<![endif]-->
 </head>
 <body>
 <div id="wrapper">
-        <?php require_once("oj-header.php");?>
+<?php require_once("oj-header.php");?>
 <div id=main>
-
 <form id=simform action="status.php" method="get">
 <div class="row">
-<div class="col-md-2">
-
-<input class="form-control" type=text size=4 name=problem_id placeholder="<?php echo $MSG_PROBLEM_ID?>" value='<?php echo $problem_id?>'>
-</div>
-<div class="col-md-2">
-<input class="form-control" type=text size=4 name=user_id placeholder="<?php echo $MSG_USER?>" value='<?php echo $user_id?>'>
-</div>
-<div class="col-md-2">
-<?php if (isset($cid)) echo "<input type='hidden' name='cid' value='$cid'>";?>
-<select class="form-control" size="1" name="language">
-<?php if (isset($_GET['language'])) $language=$_GET['language'];
+  <div class="col-md-2">
+    <input class="form-control" type=text size=4 name=problem_id placeholder="<?php echo $MSG_PROBLEM_ID?>" value='<?php echo $problem_id?>'>
+  </div>
+  <div class="col-md-2">
+    <input class="form-control" type=text size=4 name=user_id placeholder="<?php echo $MSG_USER?>" value='<?php echo $user_id?>'>
+  </div>
+  <div class="col-md-2">
+    <?php if (isset($cid)) echo "<input type='hidden' name='cid' value='$cid'>";?>
+    <select class="form-control" size="1" name="language">
+      <?php if (isset($_GET['language'])) $language=$_GET['language'];
 else $language=-1;
 if ($language<0||$language>=count($language_name)) $language=-1;
 if ($language==-1) echo "<option value='-1' selected>$MSG_LANG</option>";
@@ -42,11 +40,11 @@ foreach ($language_name as $lang){
         $i++;
 }
 ?>
-</select>
-</div>
-<div class="col-md-3">
-<select class="form-control" size="1" name="jresult">
-<?php if (isset($_GET['jresult'])) $jresult_get=intval($_GET['jresult']);
+    </select>
+  </div>
+  <div class="col-md-3">
+    <select class="form-control" size="1" name="jresult">
+      <?php if (isset($_GET['jresult'])) $jresult_get=intval($_GET['jresult']);
 else $jresult_get=-1;
 if ($jresult_get>=12||$jresult_get<0) $jresult_get=-1;
      /*if ($jresult_get!=-1){
@@ -62,9 +60,9 @@ for ($j=0;$j<12;$j++){
 }
 echo "</select>";
 ?>
-</select>
-</div>
-<?php if(isset($_SESSION['administrator'])||isset($_SESSION['source_browser'])){
+    </select>
+  </div>
+  <?php if(isset($_SESSION['administrator'])||isset($_SESSION['source_browser'])){
         if(isset($_GET['showsim']))
                 $showsim=intval($_GET['showsim']);
         else
@@ -95,25 +93,23 @@ echo "</select>";
 }
 echo "<div class='col-md-2'><input type=submit class='btn btn-primary' value='$MSG_SEARCH'></div></div></form>";
 ?>
-
-<div id=center>
-<table id=result-tab class="table table-striped content-box-header" align=center width=80%>
-<thead>
-<tr  class='toprow' >
-<th ><?php echo $MSG_RUNID?>
-<th ><?php echo $MSG_USER?>
-<th ><?php echo $MSG_PROBLEM?>
-<th ><?php echo $MSG_RESULT?>
-<th ><?php echo $MSG_MEMORY?>
-<th ><?php echo $MSG_TIME?>
-<th ><?php echo $MSG_LANG?>
-<th ><?php echo $MSG_CODE_LENGTH?>
-<th ><?php echo $MSG_SUBMIT_TIME?>
-</tr>
-</thead>
-
-<tbody>
-                        <?php
+  <div id=center>
+    <table id=result-tab class="table table-striped content-box-header" align=center width=80%>
+      <thead>
+        <tr  class='toprow' >
+          <th ><?php echo $MSG_RUNID?> 
+          <th ><?php echo $MSG_USER?> 
+          <th ><?php echo $MSG_PROBLEM?> 
+          <th ><?php echo $MSG_RESULT?> 
+          <th ><?php echo $MSG_MEMORY?> 
+          <th ><?php echo $MSG_TIME?> 
+          <th ><?php echo $MSG_LANG?> 
+          <th ><?php echo $MSG_CODE_LENGTH?> 
+          <th ><?php echo $MSG_SUBMIT_TIME?> 
+        </tr>
+      </thead>
+      <tbody>
+        <?php
                         $cnt=0;
                         foreach($view_status as $row){
                                 if ($cnt)
@@ -131,28 +127,24 @@ echo "<div class='col-md-2'><input type=submit class='btn btn-primary' value='$M
                                 $cnt=1-$cnt;
                         }
                         ?>
-                        </tbody>
-</table>
-
-</div>
-<div id=center>
-<?php echo "[<a href=status.php?".$str2.">Top</a>]&nbsp;&nbsp;";
+      </tbody>
+    </table>
+  </div>
+  <div id=center> <?php echo "[<a href=status.php?".$str2.">Top</a>]&nbsp;&nbsp;";
 if (isset($_GET['prevtop']))
         echo "[<a href=status.php?".$str2."&top=".$_GET['prevtop'].">Previous Page</a>]&nbsp;&nbsp;";
 else
         echo "[<a href=status.php?".$str2."&top=".($top+20).">Previous Page</a>]&nbsp;&nbsp;";
 echo "[<a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a>]";
-?>
+?> </div>
+  <div id=foot>
+    <?php require_once("oj-footer.php");?>
+  </div>
+  <!--end foot--> 
 </div>
-
-
-
-<div id=foot>
-        <?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+<!--end main-->
+</div>
+<!--end wrapper-->
 </body>
 <script type="text/javascript">
   var i=0;
@@ -203,11 +195,8 @@ xmlhttp.onreadystatechange=function()
     {
      var tb=window.document.getElementById('result-tab');
      var row=findRow(solution_id);
-     //alert(row);
      var r=xmlhttp.responseText;
      var ra=r.split(",");
-//     alert(r);
-//     alert(judge_result[r]);
       var loader="<img width=18 src=image/loader.gif>";
      row.cells[3].innerHTML="<span class='btn btn-warning'>"+judge_result[ra[0]]+"</span>"+loader;
      row.cells[4].innerHTML=ra[1];
@@ -226,5 +215,4 @@ xmlhttp.send();
 
 auto_refresh();
 </script>
-
 </html>

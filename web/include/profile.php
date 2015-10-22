@@ -30,6 +30,7 @@ header("Pragma: no-cache");
 					$profile.=" Mail(s)</a></li>";
 				}
         $profile.="<li><a href='./status.php?user_id=$sid'><span class='glyphicon glyphicon-file'></span> Recent</a></li>";
+                                
 				$profile.= "<li class='divider'></li><li><a href=./logout.php><span class='glyphicon glyphicon-log-out'></span> $MSG_LOGOUT</a></li></ul></li>";
 			}else{
                 if ($OJ_WEIBO_AUTH){

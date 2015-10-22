@@ -1,15 +1,17 @@
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $view_title?></title>
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-	<?php if($pr_flag){?><link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'><?php } ?>
-   	<!--[if lt IE 9]>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $view_title?></title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<?php if($pr_flag){?>
+<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
+<?php } ?>
+<!--[if lt IE 9]>
       	<script src="bootstrap/js/html5shiv.min.js"></script>
       	<script src="bootstrap/css/respond.min.js"></script>
-    	<![endif]-->	
-        <link rel="next" href="submitpage.php?<?php
+    	<![endif]-->
+<link rel="next" href="submitpage.php?<?php
         
         if ($pr_flag){
 		echo "id=$id";
@@ -20,7 +22,6 @@
         ?>">
 </head>
 <body>
-
 <?php if($pr_flag){?>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -31,29 +32,27 @@
         <h2 class="modal-title" id="myModalLabel"><?php echo $MSG_SUBMIT." ".$row->title ?></h2>
       </div>
       <div class="modal-body">
-
-<form id=frmSolution action="submit.php" method="post"
+        <form id=frmSolution action="submit.php" method="post"
 <?php if($OJ_LANG=="cn"){?>
  onsubmit="return checksource(document.getElementById('source').value);"
 <?php }?>
  >
-<?php if (isset($id)){?>
-<input id=problem_id type='hidden'  value='<?php echo $id?>' name="id" >
-<?php }else{
+          <?php if (isset($id)){?>
+          <input id=problem_id type='hidden'  value='<?php echo $id?>' name="id" >
+          <?php }else{
 $PID="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 if ($pid>25) $pid=25;
 ?>
-<input id="cid" type='hidden' value='<?php echo $cid?>' name="cid">
-<input id="pid" type='hidden' value='<?php echo $pid?>' name="pid">
-<?php }?>
-
-<div class="row">
-<div class="col-md-2">
-<h4>Language:</h4>
-</div>
-<div class="col-md-3">
-<select class="form-control" id="language" name="language">
-<?php
+          <input id="cid" type='hidden' value='<?php echo $cid?>' name="cid">
+          <input id="pid" type='hidden' value='<?php echo $pid?>' name="pid">
+          <?php }?>
+          <div class="row">
+            <div class="col-md-2">
+              <h4>Language:</h4>
+            </div>
+            <div class="col-md-3">
+              <select class="form-control" id="language" name="language">
+                <?php
 $lang_count=count($language_ext);
 
   if(isset($_GET['langmask']))
@@ -72,17 +71,18 @@ if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
   }
 
 ?>
-</select>
-</div>
-</div>
-<h4>Code:</h4>
-<textarea class="form-control" cols=180 rows=16 id="source" name="source" style="resize:none"><?php echo $view_src?></textarea><br>
-<center>
-	<input id=Submit class="btn btn-info" type=button data-loading-text="Processing..." value="<?php echo $MSG_SUBMIT?>"  onclick=do_submit(); autocomplete="off">
-	<input type=reset  class="btn btn-warning" value="Reset">
-</center>
-</form>
-	<script>
+              </select>
+            </div>
+          </div>
+          <h4>Code:</h4>
+          <textarea class="form-control" cols=180 rows=16 id="source" name="source" style="resize:none"><?php echo $view_src?></textarea>
+          <br>
+          <center>
+            <input id=Submit class="btn btn-info" type=button data-loading-text="Processing..." value="<?php echo $MSG_SUBMIT?>"  onclick=do_submit(); autocomplete="off">
+            <input type=reset  class="btn btn-warning" value="Reset">
+          </center>
+        </form>
+        <script>
 	function do_submit(){
 	var $btn = $('#Submit').button('loading');
 	if(typeof(eAL) != "undefined"){   eAL.toggle("source");eAL.toggle("source");}
@@ -96,24 +96,21 @@ if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
         document.getElementById("frmSolution").submit();
 	$btn.button('reset');
         }
-	</script>
+	</script> 
       </div>
     </div>
   </div>
 </div>
 <?php }?>
-
-	<?php
+<?php
 	if(isset($_GET['id']))
 		require_once("oj-header.php");
 	else
 		require_once("contest-header.php");
 	
 	?>
-
 <div id=main>
-	
-	<?php
+<?php
 	
 	if ($pr_flag){
 		echo "<title>$MSG_PROBLEM $row->problem_id. -- $row->title</title>";
@@ -128,12 +125,11 @@ if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
 	if ($row->spj) echo "&nbsp;&nbsp;<span class=red>Special Judge</span>";
 	echo "<br><span class=green>$MSG_SUBMIT: </span>".$row->submit."&nbsp;&nbsp;";
 	echo "<span class=green>$MSG_SOVLED: </span>".$row->accepted."<br>"; 
-	?>	
-	
-	<div class="btn-group">	
-	<?php
+	?>
+<div class="btn-group">
+  <?php
 	if ($pr_flag){
-		echo "<a tabindex='0' class='btn btn-danger' role='button' data-toggle='popover' data-trigger='focus' data-container='body' data-placement='left' data-content='".$row->tags."' title='Tags'>$MSG_TAGS</a>";
+		echo "<a tabindex='0' class='btn btn-danger' role='button' data-toggle='popover' data-trigger='focus' data-container='body' data-placement='bottom' data-content='".$row->tags."' title='Tags'>$MSG_TAGS</a>";
 		echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>$MSG_SUBMIT</button>";
 	}else{
 		echo "<a class='btn btn-primary' href='submitpage.php?cid=$cid&pid=$pid&langmask=$langmask'>$MSG_SUBMIT</a>";
@@ -143,9 +139,8 @@ if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
 	  if(isset($_SESSION['administrator'])){
       require_once("include/set_get_key.php");
       ?>
-      <a class="btn btn-default" href="admin/problem_edit.php?id=<?php echo $id?>&getkey=<?php echo $_SESSION['getkey']?>" >Edit</a>
-      <a class="btn btn-default" href="admin/quixplorer/index.php?action=list&dir=<?php echo $row->problem_id?>&order=name&srt=yes" >TestData</a>
-      <?php
+  <a class="btn btn-default" href="admin/problem_edit.php?id=<?php echo $row->problem_id?>&getkey=<?php echo $_SESSION['getkey']?>" >Edit</a> <a class="btn btn-default" href="admin/quixplorer/index.php?action=list&dir=<?php echo $row->problem_id?>&order=name&srt=yes" >TestData</a>
+  <?php
     }
 	echo "</div></center><br>";
 	
@@ -186,22 +181,22 @@ if(isset($_COOKIE['lastlang'])) $lastlang=$_COOKIE['lastlang'];
 	if(isset($_SESSION['administrator'])){
       require_once("include/set_get_key.php");
   ?>
-     <a class="btn btn-default" href="admin/problem_edit.php?id=<?php echo $id?>&getkey=<?php echo $_SESSION['getkey']?>" >Edit</a>
-      <a class="btn btn-default" href="admin/quixplorer/index.php?action=list&dir=<?php echo $row->problem_id?>&order=name&srt=yes" >TestData</a>
-     <?php
+  <a class="btn btn-default" href="admin/problem_edit.php?id=<?php echo $id?>&getkey=<?php echo $_SESSION['getkey']?>" >Edit</a> <a class="btn btn-default" href="admin/quixplorer/index.php?action=list&dir=<?php echo $row->problem_id?>&order=name&srt=yes" >TestData</a>
+  <?php
   }	
   echo "</div></center>";
 	?>
-<!-- tag -->
-<script>$(function () 
+  <!-- tag --> 
+  <script>$(function () 
       { $("[data-toggle='popover']").popover();
       });
 </script>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
-</div><!--end main-->
+  <div id=foot>
+    <?php require_once("oj-footer.php");?>
+  </div>
+  <!--end foot--> 
+</div>
+<!--end main-->
 
 </body>
 </html>

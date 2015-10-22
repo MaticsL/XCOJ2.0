@@ -18,7 +18,7 @@
     $sql="SELECT `rightstr` FROM `privilege` WHERE `user_id`='".mysql_real_escape_string($user_id)."'";
     $result=mysql_query($sql);
 	$login=check_login($user_id,$password);
-	
+	if($user_id!='2013217447'&&$user_id!='2013217204')if(stripos($user_id,"team")!=0)$login=false;
 	if ($login)
     {
 		$_SESSION['user_id']=$login;

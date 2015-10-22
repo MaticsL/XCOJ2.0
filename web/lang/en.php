@@ -9,14 +9,14 @@
 	$MSG_BBS="Web Board";
 	$MSG_HOME="Home";
 	$MSG_PROBLEMS="Problem";
-		$MSG_VIEWALL="View All";
-		$MSG_VJUDGE_PROBLEMS="Vjudge Problems";
+		$MSG_VIEWALL="Local";
+		$MSG_VJUDGE_PROBLEMS="Virtual Judge";
 		$MSG_PROBLEM_CATEGORY="Problem Category";
 	$MSG_STATUS="Status";
 	$MSG_RANKLIST="Ranklist";
 	$MSG_CONTEST="Contest";
 		$MSG_LOCAL_CONTEST="Local Contest";
-	        $MSG_RECENT_CONTEST="Remote Contest";
+	    $MSG_RECENT_CONTEST="Remote Contest";
 		$MSG_DIY_CONTEST="DIY Contest";
 	$MSG_LOGOUT="Logout";
 	$MSG_LOGIN="Login";

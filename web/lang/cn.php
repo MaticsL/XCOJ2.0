@@ -9,14 +9,14 @@
 	$MSG_BBS="讨论版";
 	$MSG_HOME="主页";
 	$MSG_PROBLEMS="问题";
-		$MSG_VIEWALL="查看全部";
+		$MSG_VIEWALL="本地";
 		$MSG_VJUDGE_PROBLEMS="虚拟评测机";
 		$MSG_PROBLEM_CATEGORY="题库目录";
 	$MSG_STATUS="评测状态";
 	$MSG_RANKLIST="排行榜";
 	$MSG_CONTEST="竞赛&作业";
-		$MSG_LOCAL_CONTEST="本地";
-	        $MSG_RECENT_CONTEST="名校联赛";
+		$MSG_LOCAL_CONTEST="本地比赛";
+	    $MSG_RECENT_CONTEST="名校联赛";
 		$MSG_DIY_CONTEST="自定义比赛";
 	$MSG_LOGOUT="注销";
 	$MSG_LOGIN="登录";
@@ -43,23 +43,11 @@
 	$MSG_Runtime_Click="运行错误(点击看详细)";
 	$MSG_Compile_Click="编译错误(点击看详细)";
 	$MSG_Compile_OK="编译成功";
-  $MSG_Click_Detail="点击看详细";
-   $MSG_Manual="人工判题";
-   $MSG_OK="确定";
-  $MSG_Explain="输入判定原因与提示";
-  
-	//fool's day
-if(date('m')==4&&date('d')==1&&rand(0,100)<10){
-        $MSG_Accepted="人品问题-愚人节快乐";
-$MSG_Presentation_Error="人品问题-愚人节快乐";
-$MSG_Wrong_Answer="人品问题-愚人节快乐";
-$MSG_Time_Limit_Exceed="人品问题-愚人节快乐";
-$MSG_Memory_Limit_Exceed="人品问题-愚人节快乐";
-$MSG_Output_Limit_Exceed="人品问题-愚人节快乐";
-$MSG_Runtime_Error="人品问题-愚人节快乐";
-$MSG_Compile_Error="人品问题-愚人节快乐";
-$MSG_Compile_OK="人品问题-愚人节快乐";
-}
+    $MSG_Click_Detail="点击看详细";
+    $MSG_Manual="人工判题";
+    $MSG_OK="确定";
+    $MSG_Explain="输入判定原因与提示";
+
     $MSG_TEST_RUN="运行完成";
 	$MSG_TR="测试运行";
 

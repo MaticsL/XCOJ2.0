@@ -1,23 +1,22 @@
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title><?php echo $view_title?></title>
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
-   	<!--[if lt IE 9]>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title><?php echo $view_title?></title>
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
+<!--[if lt IE 9]>
       	<script src="bootstrap/js/html5shiv.min.js"></script>
       	<script src="bootstrap/css/respond.min.js"></script>
-    	<![endif]-->	
+    	<![endif]-->
 </head>
 <body>
 <div id="wrapper">
-	<?php require_once("oj-header.php");?>
-<div id=main>
-	<!-- <div id='source'></div> -->
-<pre id='errtxt' class="alert alert-error"><?php echo $view_reinfo?></pre>
-<div id='errexp'>Explain:</div>
-
-<script>
+  <?php require_once("oj-header.php");?>
+  <div id=main> 
+    <!-- <div id='source'></div> -->
+    <pre id='errtxt' class="alert alert-error"><?php if(!stripos($view_reinfo, "passwd") && !stripos($view_reinfo, "db_info"))echo $view_reinfo; else echo "非法编译调用！";?></pre>
+    <div id='errexp'>Explain:</div>
+    <script>
    var i=0;
    var pats=new Array();
    var exps=new Array();
@@ -155,12 +154,14 @@ exps[56]="参数或表达式没写完";
    explain();
  
  </script>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-<script src=include/jquery-latest.js></script>
-
-</div><!--end foot-->
-</div><!--end main-->
-</div><!--end wrapper-->
+    <div id=foot>
+      <?php require_once("oj-footer.php");?>
+      <script src=include/jquery-latest.js></script> 
+    </div>
+    <!--end foot--> 
+  </div>
+  <!--end main--> 
+</div>
+<!--end wrapper-->
 </body>
 </html>

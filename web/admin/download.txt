@@ -15,13 +15,13 @@
 				<tbody>
 					<tr>
 						<td>
-							Dev C++ 5.5.3
+							Dev C++ 5.9.2
 						</td>
 						<td>
 							最精简的C++集成编译环境。
 						</td>
 						<td class="text-center">
-							<a href="http://www.xiazaiba.com/html/3836.html" target="_blank">链接</a>
+							<a href="http://downloads.sourceforge.net/project/orwelldevcpp/Setup%20Releases/Dev-Cpp%205.9.2%20TDM-GCC%204.8.1%20Setup.exe" target="_blank">链接</a>
 						</td>
 					</tr>
 					<tr>
@@ -65,7 +65,7 @@
 							编辑器之神
 						</td>
 						<td class="text-center">
-							<a href="http://rj.baidu.com/soft/detail/12314.html?ald" target="_blank"><span>链接</span></a>
+							<a href="http://www.vim.org/" target="_blank"><span>链接</span></a>
 						</td>
 					</tr>
 					<tr>
@@ -98,7 +98,7 @@
 							Firefox浏览器
 						</td>
 						<td class="text-center">
-							<a href="http://www.firefox.com.cn/download/" target="_blank"><span>官网</span></a>
+							<a href="https://www.mozilla.org/en-US/firefox/all/" target="_blank"><span>官网</span></a>
 						</td>
 					</tr>
 				</tbody>

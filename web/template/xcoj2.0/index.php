@@ -82,15 +82,6 @@
 					HFUTOJ	
 				</a>
 
-				<a href="http://172.18.6.127:10024" class="list-group-item">
-					CodeForces(校内镜像)	
-				</a>
-				<a href="http://172.18.6.127:10025" class="list-group-item">
-					HDOJ(校内镜像)	
-				</a>
-				<a href="http://172.18.6.127:10026" class="list-group-item">
-					POJ(校内镜像)	
-				</a>
 
 				<a href="./" class="list-group-item disabled">
 					Blogs	

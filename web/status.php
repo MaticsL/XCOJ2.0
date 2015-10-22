@@ -298,20 +298,9 @@ else
 			$view_status[$i][7]="----";
 		}
         $view_status[$i][8]= $row['in_date'];
-        
-   
-   
 
 }
 if(!$OJ_MEMCACHE)mysql_free_result($result);
-
-
-
-
-
-
-
-
 ?>
 
 <?php
